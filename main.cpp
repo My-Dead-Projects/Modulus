@@ -4,7 +4,8 @@
 //
 
 #include "main.h"
-#include <iostream>
+#include "compile.h"
+#include <fstream>
 
 int main(int argc, const char * argv[]) {
     Main main(argc, argv);
@@ -13,7 +14,10 @@ int main(int argc, const char * argv[]) {
 
 int Main::start() {
     
-    
+    for (int i = 1; i < argv().size(); i++) {
+        std::ifstream file(arg(i));
+        compile(std::move(file));
+    }
     
     return 0;
 }

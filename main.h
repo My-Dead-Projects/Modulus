@@ -21,7 +21,7 @@ public:
     int start();
     Main(int argc, const char * argv[]) : p_argv(argc) {
         for (int i = 0; i < argc; i++) {
-            p_argv.push_back(std::string(argv[i]));
+            p_argv[i] = std::string(argv[i]);
         }
     }
 };
